@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Biomimetic Structural Engineering</title>
+<style>
+:root{--bg:#f6f3ec;--panel:#ffffff;--fg:#2b2e2c;--mute:#5d625f;--green:#244a35;--sage:#a9b8a0;--sage2:#e3e8dd;--line:#d6d4cc;--gray:#ececea;--ph:#8a8f8b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#191c1a;--panel:#222623;--fg:#e8e6df;--mute:#a4a9a5;--green:#8fb59d;--sage:#53665a;--sage2:#2a322d;--line:#3a403c;--gray:#2a2e2b;--ph:#7d837f}}
+:root[data-theme="dark"]{--bg:#191c1a;--panel:#222623;--fg:#e8e6df;--mute:#a4a9a5;--green:#8fb59d;--sage:#53665a;--sage2:#2a322d;--line:#3a403c;--gray:#2a2e2b;--ph:#7d837f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 "Helvetica Neue",Arial,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--panel);z-index:10}
+header{background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:9}
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px}
+.brand{padding:12px 0 6px;font-size:13px;letter-spacing:.08em;font-weight:700;color:var(--green)}
+nav{display:flex;gap:2px;overflow-x:auto;white-space:nowrap}
+nav a{padding:9px 12px;color:var(--mute);text-decoration:none;font-size:14px;border-bottom:2px solid transparent}
+nav a:hover{color:var(--fg)}nav a.on{color:var(--green);border-color:var(--green);font-weight:600}
+main{padding:36px 0 56px}
+.page{display:none}.page.on{display:block;animation:f .25s}
+@keyframes f{from{opacity:0}to{opacity:1}}
+h1{font-size:30px;line-height:1.25;margin:0 0 10px;font-weight:600}
+h2{font-size:21px;margin:40px 0 10px;padding-top:14px;border-top:1px solid var(--line);font-weight:600;color:var(--green)}
+h3{font-size:16px;margin:22px 0 4px;font-weight:700}
+p{margin:0 0 12px;max-width:760px}
+.sub{color:var(--mute);font-size:18px;max-width:760px}
+.rq{border-left:4px solid var(--green);background:var(--sage2);padding:16px 20px;margin:22px 0;font-size:18px;max-width:820px}
+.rq small{display:block;font-size:12px;letter-spacing:.08em;color:var(--green);font-weight:700;margin-bottom:4px}
+.hero{background:var(--panel);border:1px solid var(--line);margin:22px 0}
+.hero svg{display:block;width:100%;height:auto}
+.cap{font-size:13px;color:var(--mute);padding:8px 12px;border-top:1px solid var(--line)}
+.ph{border:1px dashed var(--ph);background:var(--gray);color:var(--mute);padding:18px;font-size:14px;margin:10px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:12px 0}
+.grid .ph{margin:0;min-height:120px}
+.grid .ph b{display:block;color:var(--fg);margin-bottom:4px}
+.flow{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0;align-items:stretch}
+.flow div{flex:1 1 120px;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--green);padding:10px;font-size:14px;text-align:center;position:relative}
+.flow div+div::before{content:"\2192";position:absolute;left:-14px;top:50%;transform:translateY(-50%);color:var(--green);font-size:16px}
+.flow{gap:16px}
+ul{padding-left:20px;max-width:760px}li{margin-bottom:4px}
+.scroll{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px;background:var(--panel)}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+th{background:var(--sage2);font-size:13px}
+td[contenteditable]:focus{outline:2px solid var(--green)}
+button{font:inherit;font-size:14px;background:var(--green);color:var(--bg);border:0;padding:8px 14px;cursor:pointer}
+.vars{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:1px solid var(--line);background:var(--panel)}
+.vars div{padding:14px 16px;border-right:1px solid var(--line)}
+.vars b{display:block;font-size:12px;letter-spacing:.07em;color:var(--green);margin-bottom:4px}
+.pn{display:flex;justify-content:space-between;margin-top:40px;padding-top:14px;border-top:1px solid var(--line);font-size:14px}
+.pn a{color:var(--green)}
+.note{font-size:13px;color:var(--mute)}
+footer{background:var(--panel);border-top:1px solid var(--line);padding:22px 0;font-size:13px;color:var(--mute)}
+@media(max-width:600px){h1{font-size:24px}.flow div+div::before{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="brand">BIOMIMETIC STRUCTURAL ENGINEERING</div>
+<nav id="nav">
+<a href="#overview">Overview</a><a href="#motivation">Research Motivation</a><a href="#literature">Literature Review</a><a href="#methodology">Experimental Methodology</a><a href="#results">Results &amp; Discussion</a><a href="#conclusion">Conclusion &amp; References</a>
+</nav></div></header>
+
+<main class="wrap">
+
+<!-- OVERVIEW -->
+<section class="page" id="p-overview">
+<p class="note" style="margin:0 0 6px">A Research Study on Cellular Geometry and Load-Bearing Column Performance</p>
+<h1>Evaluation of Biomimetic Cellular Structures for the Strength-to-Weight Performance of Load-Bearing Columns</h1>
+<p class="sub">An experimental investigation of biomimetic cellular geometry in small-scale load-bearing column models.</p>
+<div class="hero"><svg id="hex" viewBox="0 0 1000 300" role="img" aria-label="Illustration of column cross-sections with hexagonal cellular infill"></svg>
+<div class="cap">Illustration: schematic cellular cross-sections (solid control, hexagonal lattice). Not experimental evidence.</div></div>
+<div class="rq"><small>RESEARCH QUESTION</small>“To what extent do biomimetic cellular structures improve the strength-to-weight performance of load-bearing column models compared with a conventional structural design?”</div>
+<h2>Project Overview</h2>
+<p>This research investigates whether structural geometries inspired by biological forms may influence the strength-to-weight performance of fabricated column specimens. The study involves CAD design, specimen fabrication, controlled mechanical testing, data collection, and comparative analysis.</p>
+<h2>Abstract</h2>
+<div class="ph"><b>Editable: final abstract</b>Add after data analysis is complete. Include: research problem; objective; methodology; major results; conclusion.</div>
+<h2>Study Objectives</h2>
+<ul>
+<li>Develop and fabricate column specimens incorporating selected biomimetic cellular geometries.</li>
+<li>Establish a conventional structural design for comparative testing.</li>
+<li>Evaluate mechanical performance under consistent testing conditions.</li>
+<li>Record specimen mass and relevant mechanical performance measurements.</li>
+<li>Analyze structural performance in relation to specimen mass.</li>
+<li>Evaluate the extent to which geometry influences the measured performance within the limitations of the study.</li>
+</ul>
+<h2>Study Design</h2>
+<div class="flow"><div>Literature Review</div><div>CAD Design</div><div>Specimen Fabrication</div><div>Mechanical Testing</div><div>Data Collection</div><div>Comparative Analysis</div></div>
+<h2>Specimen Groups</h2>
+<div class="grid">
+<div class="ph"><b>Honeycomb-inspired column</b>Placeholder: CAD screenshot or specimen photograph.</div>
+<div class="ph"><b>Lobster shell-inspired column</b>Placeholder: CAD screenshot or specimen photograph.</div>
+<div class="ph"><b>Sea urchin shell-inspired column</b>Placeholder: CAD screenshot or specimen photograph.</div>
+<div class="ph"><b>Conventional control column</b>Placeholder: CAD screenshot or specimen photograph.</div></div>
+<div class="pn"><span></span><a href="#motivation">Research Motivation &rarr;</a></div>
+</section>
+
+<!-- MOTIVATION -->
+<section class="page" id="p-motivation">
+<h1>Research Motivation</h1>
+<h2>1. Research Interest</h2>
+<div class="ph"><b>Editable paragraph</b>Describe your interest in structural engineering, mathematics, physics, and architecture, and how the geometry of a structure influences its mechanical behavior. Use only experiences that are true for you.</div>
+<h2>2. Research Rationale</h2>
+<p>Columns are structural components designed to transfer loads. Their performance depends on material properties, geometry, slenderness, cross-sectional characteristics, fabrication, and loading conditions. Because geometry is one of the factors a designer can change directly, load-bearing columns are a suitable focus for investigating how structural arrangement relates to measured performance.</p>
+<p>A controlled, small-scale setting allows specimens to be fabricated and tested under consistent conditions, so that differences between designs can be compared with fewer confounding factors than a full-scale study would involve.</p>
+<h2>3. Why Biomimetic Design?</h2>
+<p>Biological structures provide potential design references because many organisms have skeletal or shell architectures that serve structural functions. This research does not assume that biological structures are inherently superior. It investigates whether specific geometries inspired by biological forms show measurable differences under the conditions of this experiment.</p>
+<h2>4. Research Question</h2>
+<div class="rq"><small>RESEARCH QUESTION</small>“To what extent do biomimetic cellular structures improve the strength-to-weight performance of load-bearing column models compared with a conventional structural design?”</div>
+<h3>Key terms</h3>
+<ul>
+<li><b>Biomimetic design:</b> design that draws on forms or organizational principles observed in biological systems.</li>
+<li><b>Cellular geometry:</b> an internal arrangement of repeated geometric units, with voids between solid walls.</li>
+<li><b>Load-bearing column:</b> a vertical member that carries and transfers compressive load.</li>
+<li><b>Mechanical performance:</b> the measured response of a specimen under test. Define the exact measurement used in your procedure.</li>
+<li><b>Strength-to-weight performance:</b> measured mechanical performance considered relative to specimen mass.</li></ul>
+<h2>5. Research Objective</h2>
+<p>The objective is to experimentally compare structural designs and examine the relationship between measured mechanical performance and specimen mass.</p>
+<div class="pn"><a href="#overview">&larr; Overview</a><a href="#literature">Literature Review &rarr;</a></div>
+</section>
+
+<!-- LITERATURE -->
+<section class="page" id="p-literature">
+<h1>Literature Review</h1>
+<p class="note">Add in-text citations once your sources are confirmed. No sources are cited on this page yet.</p>
+<h2>1. Biomimicry in Structural Engineering</h2>
+<p>Biomimicry applies observations of biological form and function to engineering problems. Biological structural arrangements have been studied as references for engineered components. Observing a structure in nature is not the same as validating it in engineering: a biological form must be reinterpreted, fabricated in a chosen material, and tested before any performance claim can be made.</p>
+<h2>2. Cellular Structures</h2>
+<p>Cellular structures consist of repeated geometric units that enclose voids. The internal organization may influence load distribution, deformation, stability, and the amount of material used. Differences in unit shape, wall thickness, and arrangement can change how a component responds to load.</p>
+<h2>3. Biological Structural Models</h2>
+<h3>A. Honeycomb-Inspired Structures</h3>
+<p>Honeycomb arrangements of repeated hexagonal cells have been widely studied in structural and materials engineering as a way to arrange material around enclosed space.</p>
+<h3>B. Lobster Shell-Inspired Structures</h3>
+<p>Lobster exoskeletons are studied for their organization, including layering and geometry within the shell. These features are a potential source of inspiration for engineered architectures.</p>
+<h3>C. Sea Urchin-Inspired Structures</h3>
+<p>Sea urchin skeletons have an organized geometric arrangement that has been considered as inspiration for structural design.</p>
+<p>The fabricated specimens in this study are engineering interpretations inspired by these biological structures. They are not claimed to replicate the biology of the organisms exactly.</p>
+<h2>4. Load-Bearing Columns</h2>
+<p>Columns transfer structural loads, typically in axial compression. Behavior is influenced by:</p>
+<ul><li>cross-sectional geometry</li><li>material properties</li><li>specimen dimensions</li><li>slenderness</li><li>axial loading</li><li>buckling</li><li>local deformation</li><li>fabrication variability</li></ul>
+<p>Material failure occurs when the material itself cannot sustain the stress. Structural instability, such as buckling, is a geometric response in which a member loses stability, which can occur before the material reaches its own limit. Which of these governs depends on the specimen and the test.</p>
+<h2>5. Strength-to-Weight Performance</h2>
+<p>Evaluating performance relative to mass matters in structural engineering because a heavier member can often carry more load simply by containing more material. Comparing designs fairly requires consistent conditions, including material, fabrication settings, and test method.</p>
+<div class="ph"><b>Editable: performance metric</b>Define the metric and formula you actually use (for example, measured performance divided by specimen mass), and state units.</div>
+<h2>6. Research Context</h2>
+<p>Research on cellular geometries may inform future investigations of material efficiency and structural design. This study makes no claims about sustainability, real-world structural safety, or commercial applicability.</p>
+<div class="pn"><a href="#motivation">&larr; Research Motivation</a><a href="#methodology">Experimental Methodology &rarr;</a></div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="page" id="p-methodology">
+<h1>Experimental Methodology</h1>
+<h2>1. Experimental Design</h2>
+<p>This is a comparative experiment. Each biomimetic design is tested under the same conditions as a conventional control column, which serves as the baseline against which any difference is judged.</p>
+<div class="grid">
+<div class="ph"><b>Honeycomb-inspired</b>Editable: design description.</div>
+<div class="ph"><b>Lobster shell-inspired</b>Editable: design description.</div>
+<div class="ph"><b>Sea urchin shell-inspired</b>Editable: design description.</div>
+<div class="ph"><b>Conventional control</b>Editable: design description.</div></div>
+<h2>2. CAD Modeling</h2>
+<p>All specimens are designed in CAD before fabrication.</p>
+<ul><li>CAD software: <i>[placeholder]</i></li><li>Specimen dimensions: <i>[placeholder]</i></li><li>Cross-sectional design: <i>[placeholder]</i></li><li>Structural geometry: <i>[placeholder]</i></li><li>Design constraints: <i>[placeholder]</i></li></ul>
+<div class="grid">
+<div class="ph"><b>Honeycomb CAD</b>Placeholder: screenshot.</div>
+<div class="ph"><b>Lobster shell CAD</b>Placeholder: screenshot.</div>
+<div class="ph"><b>Sea urchin CAD</b>Placeholder: screenshot.</div>
+<div class="ph"><b>Control CAD</b>Placeholder: screenshot.</div></div>
+<h2>3. Materials and Fabrication</h2>
+<ul><li>3D printer: <i>[placeholder]</i></li><li>Filament: <i>[placeholder]</i></li><li>CAD software: <i>[placeholder]</i></li><li>Fabrication settings: <i>[placeholder]</i></li><li>Specimen dimensions: <i>[placeholder]</i></li><li>Testing equipment: <i>[placeholder]</i></li><li>Additional materials: <i>[placeholder]</i></li></ul>
+<p>Fabrication conditions are kept consistent across specimens to reduce variability.</p>
+<div class="grid"><div class="ph"><b>Specimen photograph</b>Placeholder.</div><div class="ph"><b>Specimen photograph</b>Placeholder.</div><div class="ph"><b>Specimen photograph</b>Placeholder.</div></div>
+<h2>4. Experimental Variables</h2>
+<div class="vars">
+<div><b>INDEPENDENT</b>Structural geometry (design type).</div>
+<div><b>DEPENDENT</b>Measured mechanical performance; specimen mass; calculated performance metric.</div>
+<div><b>CONTROLLED</b>Material, fabrication settings, testing equipment, testing conditions, and relevant dimensions. <i>Edit if designs require dimensional differences.</i></div></div>
+<h2>5. Testing Procedure</h2>
+<ul><li>Testing equipment: <i>[placeholder]</i></li><li>Type of mechanical test: <i>[placeholder]</i></li><li>Specimen preparation: <i>[placeholder]</i></li><li>Testing setup: <i>[placeholder]</i></li><li>Measurement method: <i>[placeholder]</i></li><li>Data recording: <i>[placeholder]</i></li><li>Number of trials: <i>[placeholder]</i></li><li>Testing conditions: <i>[placeholder]</i></li></ul>
+<div class="hero"><svg viewBox="0 0 600 260" role="img" aria-label="Illustration of an axial compression test setup">
+<g fill="none" stroke="currentColor" stroke-width="2" style="color:var(--fg)">
+<rect x="200" y="40" width="200" height="16" fill="var(--sage)"/><rect x="200" y="206" width="200" height="16" fill="var(--sage)"/>
+<rect x="270" y="56" width="60" height="150" fill="var(--sage2)"/>
+<path d="M300 8v30M292 28l8 10 8-10"/></g>
+<g fill="var(--fg)" font-size="13" font-family="Arial"><text x="310" y="22">Applied axial load</text><text x="410" y="52">Upper platen</text><text x="340" y="135">Specimen</text><text x="410" y="218">Fixed base</text></g></svg>
+<div class="cap">Illustration of a generic axial compression setup, not experimental evidence. Replace with a photograph of the actual setup.</div></div>
+<h2>6. Data Collection</h2>
+<p class="note">Click a cell to type. Entries on this page are not saved after you close it; send final data to be added to the published site.</p>
+<div class="scroll"><table id="dt"><thead><tr><th>Specimen ID</th><th>Structural Design</th><th>Trial Number</th><th>Specimen Mass</th><th>Measured Mechanical Performance</th><th>Calculated Performance Metric</th><th>Notes</th></tr></thead><tbody></tbody></table></div>
+<button id="addrow" type="button">Add row</button>
+<h2>7. Data Analysis</h2>
+<p>Specimens will be compared using actual experimental data only. Complete each part after testing.</p>
+<ul><li>Average measurements: <i>[placeholder]</i></li><li>Variability: <i>[placeholder]</i></li><li>Comparative charts: <i>[placeholder]</i></li><li>Performance relative to mass: <i>[placeholder]</i></li><li>Observations: <i>[placeholder]</i></li><li>Statistical analysis, if applicable: <i>[placeholder]</i></li></ul>
+<h2>8. Methodology Summary</h2>
+<div class="flow"><div>Design</div><div>Fabrication</div><div>Testing</div><div>Measurement</div><div>Analysis</div></div>
+<div class="pn"><a href="#literature">&larr; Literature Review</a><a href="#results">Results &amp; Discussion &rarr;</a></div>
+</section>
+
+<!-- RESULTS -->
+<section class="page" id="p-results">
+<h1>Results &amp; Discussion</h1>
+<p class="note">All sections below await actual data. Nothing on this page is a result.</p>
+<h2>1. Experimental Results</h2>
+<div class="ph"><b>Results table</b>Placeholder: summary table of measurements by design.</div>
+<h2>2. Specimen Comparison</h2>
+<div class="grid">
+<div class="ph"><b>Honeycomb</b>Before / after testing photographs and caption.</div>
+<div class="ph"><b>Lobster shell</b>Before / after testing photographs and caption.</div>
+<div class="ph"><b>Sea urchin</b>Before / after testing photographs and caption.</div>
+<div class="ph"><b>Control</b>Before / after testing photographs and caption.</div></div>
+<h2>3. Mechanical Performance</h2>
+<div class="ph">Chart placeholder: measured mechanical performance by design.</div>
+<h2>4. Mass Comparison</h2>
+<div class="ph">Chart placeholder: specimen mass by design.</div>
+<h2>5. Performance Relative to Mass</h2>
+<div class="ph">Chart placeholder: calculated performance metric by design.</div>
+<h2>6. Observations</h2>
+<div class="ph">Record documented observations only: deformation patterns, changes in specimens, other notes.</div>
+<h2>7. Discussion</h2>
+<p class="note">Keep interpretation separate from direct observation.</p>
+<ul><li>Differences between specimen groups: <i>[placeholder]</i></li><li>Relationship between structural geometry and performance: <i>[placeholder]</i></li><li>Relationship between specimen mass and performance: <i>[placeholder]</i></li><li>Comparison to literature: <i>[placeholder]</i></li><li>Potential explanations for observed results: <i>[placeholder]</i></li><li>Unexpected findings: <i>[placeholder]</i></li></ul>
+<h2>8. Limitations</h2>
+<div class="ph">List only limitations that apply to your study, such as specimen scale, number of trials, material, fabrication variability, measurement and equipment limits, differences from real columns, and limits on generalizing.</div>
+<div class="pn"><a href="#methodology">&larr; Experimental Methodology</a><a href="#conclusion">Conclusion &amp; References &rarr;</a></div>
+</section>
+
+<!-- CONCLUSION -->
+<section class="page" id="p-conclusion">
+<h1>Conclusion &amp; References</h1>
+<h2>1. Conclusion</h2>
+<div class="ph"><b>Editable</b>Answer the research question directly, based on the collected data.</div>
+<h2>2. Engineering Implications</h2>
+<p>Findings from this study relate to structural engineering research on small-scale models. They are experimental findings, not evidence of real-world structural safety, and they do not support use in actual buildings.</p>
+<div class="ph">Add implications supported by your results.</div>
+<h2>3. Future Research</h2>
+<ul><li>Additional cellular geometries</li><li>Additional biological inspirations</li><li>Different fabrication materials</li><li>Additional mechanical tests</li><li>Larger sample sizes</li><li>More consistent fabrication methods</li><li>Testing at different scales</li><li>Additional structural performance metrics</li></ul>
+<h2>4. References</h2>
+<p class="note">APA format. Placeholders only; replace with sources you have actually read.</p>
+<div class="ph">Author, A. A. (Year). <i>Title of work</i>. Source. [placeholder]</div>
+<div class="ph">Author, B. B. (Year). Title of article. <i>Journal Name</i>, volume(issue), pages. [placeholder]</div>
+<h2>5. Acknowledgments</h2>
+<div class="ph">Add mentors, teachers, facilities, and other contributors, if appropriate.</div>
+<div class="pn"><a href="#results">&larr; Results &amp; Discussion</a><a href="#overview">Back to Overview</a></div>
+</section>
+</main>
+
+<footer><div class="wrap">Evaluation of Biomimetic Cellular Structures for the Strength-to-Weight Performance of Load-Bearing Columns<br>Student research project. Add author, school, course, mentor, and year here.</div></footer>
+
+<script>
+(function(){
+var pages=["overview","motivation","literature","methodology","results","conclusion"];
+function show(){
+var h=(location.hash||"#overview").slice(1);if(pages.indexOf(h)<0)h="overview";
+pages.forEach(function(p){document.getElementById("p-"+p).classList.toggle("on",p===h)});
+document.querySelectorAll("#nav a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+h)});
+window.scrollTo(0,0);document.title="Biomimetic Structural Engineering";}
+window.addEventListener("hashchange",show);show();
+// hex illustration
+var s=document.getElementById("hex"),ns="http://www.w3.org/2000/svg",o="";
+function hex(cx,cy,r,f){var p=[];for(var i=0;i<6;i++){var a=Math.PI/3*i+Math.PI/6;p.push((cx+r*Math.cos(a)).toFixed(1)+","+(cy+r*Math.sin(a)).toFixed(1))}return '<polygon points="'+p.join(" ")+'" fill="'+f+'" stroke="var(--green)" stroke-width="2"/>'}
+function box(x,w,kind){var out='<rect x="'+x+'" y="30" width="'+w+'" height="240" fill="none" stroke="var(--fg)" stroke-width="2"/>';
+if(kind==="solid")return out+'<rect x="'+(x+8)+'" y="38" width="'+(w-16)+'" height="224" fill="var(--sage)"/>';
+var r=22,dx=r*Math.sqrt(3),dy=r*1.5,g="";
+for(var row=0;row<9;row++)for(var c=0;c<8;c++){var cx=x+20+c*dx+(row%2?dx/2:0),cy=48+row*dy;if(cx>x+8&&cx<x+w-8&&cy<262)g+=hex(cx,cy,r-3,"var(--sage2)")}
+return out+'<rect x="'+(x+8)+'" y="38" width="'+(w-16)+'" height="224" fill="var(--sage)"/>'+g}
+o+=box(60,200,"solid")+box(400,200,"hex");
+o+='<g fill="var(--fg)" font-size="14" font-family="Arial"><text x="60" y="22">Conventional cross-section</text><text x="400" y="22">Cellular cross-section</text></g>';
+o+=hexRow();function hexRow(){var g="";for(var i=0;i<5;i++)g+=hex(740+(i%2)*38,60+i*50,26,i%2?"var(--sage2)":"var(--sage)");return g}
+s.innerHTML=o;
+// data table
+var tb=document.querySelector("#dt tbody");
+function row(){var tr=document.createElement("tr");for(var i=0;i<7;i++){var td=document.createElement("td");td.contentEditable="true";tr.appendChild(td)}tb.appendChild(tr)}
+for(var k=0;k<4;k++)row();
+document.getElementById("addrow").onclick=row;
+})();
+</script>
+</body>
+</html>
