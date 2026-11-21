@@ -55,6 +55,24 @@ button{font:inherit;font-size:14px;background:var(--green);color:var(--bg);borde
 .note{font-size:13px;color:var(--mute)}
 footer{background:var(--panel);border-top:1px solid var(--line);padding:22px 0;font-size:13px;color:var(--mute)}
 @media(max-width:600px){h1{font-size:24px}.flow div+div::before{display:none}}
+.hb{background:#1f3d2c;color:#f1efe6;display:grid;grid-template-columns:1.05fr .95fr;margin:0 0 28px}
+.hb .t{padding:34px 30px;display:flex;flex-direction:column;justify-content:center}
+.hb .e{font-size:12px;letter-spacing:.1em;color:#a9b8a0;font-weight:700;margin-bottom:14px}
+.hb h1{font-size:32px;line-height:1.2;color:#f1efe6;margin:0 0 14px}
+.hb .sub{color:#d3dccb;font-size:16px;margin:0}
+.hb .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.hb .btns a{padding:9px 14px;font-size:14px;text-decoration:none;border:1px solid #a9b8a0;color:#f1efe6}
+.hb .btns a.f{background:#f1efe6;color:#1f3d2c;border-color:#f1efe6}
+.hb .g{background:#183225}.hb .g svg{width:100%;height:100%;display:block}
+@media(max-width:760px){.hb{grid-template-columns:1fr}.hb h1{font-size:25px}}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.sg figure{margin:0;background:var(--panel);border:1px solid var(--line)}
+.sg svg{display:block;width:100%;height:auto;background:var(--gray)}
+.sg figcaption{padding:10px 12px;font-size:14px;border-top:1px solid var(--line)}
+.sg figcaption b{display:block}.sg figcaption span{font-size:12px;color:var(--mute)}
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));border-left:1px solid var(--line);border-top:1px solid var(--line);background:var(--panel)}
+.toc a{padding:14px 16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;color:var(--fg);font-size:14px}
+.toc a b{display:block;color:var(--green);font-size:15px}.toc a:hover{background:var(--sage2)}
 </style>
 </head>
 <body>
@@ -68,9 +86,11 @@ footer{background:var(--panel);border-top:1px solid var(--line);padding:22px 0;f
 
 <!-- OVERVIEW -->
 <section class="page" id="p-overview">
-<p class="note" style="margin:0 0 6px">A Research Study on Cellular Geometry and Load-Bearing Column Performance</p>
+<div class="hb"><div class="t"><div class="e">A RESEARCH STUDY ON CELLULAR GEOMETRY AND LOAD-BEARING COLUMN PERFORMANCE</div>
 <h1>Evaluation of Biomimetic Cellular Structures for the Strength-to-Weight Performance of Load-Bearing Columns</h1>
 <p class="sub">An experimental investigation of biomimetic cellular geometry in small-scale load-bearing column models.</p>
+<div class="btns"><a class="f" href="#methodology">Experimental methodology</a><a href="#motivation">Research motivation</a></div></div>
+<div class="g"><svg id="hg" viewBox="0 0 520 440" role="img" aria-label="Conceptual illustration of a honeycomb-inspired column with a cross-section detail"></svg></div></div>
 <div class="hero"><svg id="hex" viewBox="0 0 1000 300" role="img" aria-label="Illustration of column cross-sections with hexagonal cellular infill"></svg>
 <div class="cap">Illustration: schematic cellular cross-sections (solid control, hexagonal lattice). Not experimental evidence.</div></div>
 <div class="rq"><small>RESEARCH QUESTION</small>“To what extent do biomimetic cellular structures improve the strength-to-weight performance of load-bearing column models compared with a conventional structural design?”</div>
@@ -89,12 +109,17 @@ footer{background:var(--panel);border-top:1px solid var(--line);padding:22px 0;f
 </ul>
 <h2>Study Design</h2>
 <div class="flow"><div>Literature Review</div><div>CAD Design</div><div>Specimen Fabrication</div><div>Mechanical Testing</div><div>Data Collection</div><div>Comparative Analysis</div></div>
-<h2>Specimen Groups</h2>
-<div class="grid">
-<div class="ph"><b>Honeycomb-inspired column</b>Placeholder: CAD screenshot or specimen photograph.</div>
-<div class="ph"><b>Lobster shell-inspired column</b>Placeholder: CAD screenshot or specimen photograph.</div>
-<div class="ph"><b>Sea urchin shell-inspired column</b>Placeholder: CAD screenshot or specimen photograph.</div>
-<div class="ph"><b>Conventional control column</b>Placeholder: CAD screenshot or specimen photograph.</div></div>
+<h2>Specimen Design Categories</h2>
+<div class="sg">
+<figure><svg id="c-honey" viewBox="0 0 200 300" role="img" aria-label="Conceptual honeycomb-inspired column"></svg><figcaption><b>Honeycomb-inspired column</b><span>Conceptual rendering</span></figcaption></figure>
+<figure><svg id="c-lobster" viewBox="0 0 200 300" role="img" aria-label="Conceptual lobster shell-inspired column"></svg><figcaption><b>Lobster shell-inspired column</b><span>Conceptual rendering</span></figcaption></figure>
+<figure><svg id="c-urchin" viewBox="0 0 200 300" role="img" aria-label="Conceptual sea urchin-inspired column"></svg><figcaption><b>Sea urchin-inspired column</b><span>Conceptual rendering</span></figcaption></figure>
+<figure><svg id="c-control" viewBox="0 0 200 300" role="img" aria-label="Provisional conventional control column"></svg><figcaption><b>Conventional control column</b><span>Preliminary conceptual design</span></figcaption></figure></div>
+<p class="note" style="margin-top:10px">Conceptual visualizations of the proposed specimen design categories. These illustrations are intended to communicate the design concepts and are not photographs of fabricated or tested specimens. Final CAD models and experimental photographs will replace these illustrations as they become available.</p>
+<div class="hero"><svg id="hex" viewBox="0 0 1000 300" role="img" aria-label="Illustration of column cross-sections with hexagonal cellular infill"></svg>
+<div class="cap">Illustration: schematic cross-sections (solid and cellular). Not experimental evidence.</div></div>
+<h2>Research Sections</h2>
+<div class="toc"><a href="#motivation"><b>Research Motivation</b>Interest in structural design and the rationale for the study</a><a href="#literature"><b>Literature Review</b>Biomimicry, cellular structures, columns, and strength-to-weight evaluation</a><a href="#methodology"><b>Experimental Methodology</b>Specimen design, fabrication, variables, and testing procedure</a><a href="#results"><b>Results &amp; Discussion</b>Data, comparisons, observations, and limitations (pending testing)</a><a href="#conclusion"><b>Conclusion &amp; References</b>Conclusion, implications, future research, and sources</a></div>
 <div class="pn"><span></span><a href="#motivation">Research Motivation &rarr;</a></div>
 </section>
 
@@ -274,6 +299,32 @@ var tb=document.querySelector("#dt tbody");
 function row(){var tr=document.createElement("tr");for(var i=0;i<7;i++){var td=document.createElement("td");td.contentEditable="true";tr.appendChild(td)}tb.appendChild(tr)}
 for(var k=0;k<4;k++)row();
 document.getElementById("addrow").onclick=row;
+})();
+</script>
+<script>
+(function(){
+var G="#244a35",B="#cfd8c8",W="#eef0ea";
+function hp(x,y,r,f,s,w){var p=[];for(var i=0;i<6;i++){var a=Math.PI/6+i*Math.PI/3;p.push((x+r*Math.cos(a)).toFixed(1)+","+(y+r*Math.sin(a)).toFixed(1))}return '<polygon points="'+p.join(" ")+'" fill="'+f+'" stroke="'+s+'" stroke-width="'+w+'"/>'}
+function hf(r,x0,x1,y0,y1,f,s,w){var dx=r*1.732,dy=r*1.5,o="";for(var j=0,y=y0;y<y1;y+=dy,j++)for(var x=x0+(j%2?dx/2:0);x<x1;x+=dx)o+=hp(x,y,r,f,s,w);return o}
+function side(k,id){var o="",i,j,m;
+if(k==="honey")return hf(9,40,160,50,275,"none",G,1.1);
+if(k==="lobster"){for(i=0;i<8;i++){var y=60+i*25,yc=y+12.5;o+='<clipPath id="lb'+id+i+'"><rect x="40" y="'+y+'" width="120" height="25"/></clipPath><g clip-path="url(#lb'+id+i+')"><g transform="rotate('+(i*22.5)+' 100 '+yc+')" stroke="'+G+'" stroke-width="1">';for(m=-12;m<=12;m++)o+='<line x1="-60" x2="260" y1="'+(yc+m*6)+'" y2="'+(yc+m*6)+'"/>';o+='</g></g><line x1="40" x2="160" y1="'+y+'" y2="'+y+'" stroke="'+G+'" stroke-width="2"/>'}return o}
+if(k==="urchin"){for(j=0;j<19;j++)for(i=0;i<9;i++)o+='<circle cx="'+(42+i*14+(j%2?7:0))+'" cy="'+(62+j*11)+'" r="'+(1.6+2.2*Math.abs(Math.sin(i*3.1+j*1.7))).toFixed(2)+'" fill="'+G+'" opacity=".75"/>';
+for(j=0;j<2;j++){var d="M40 "+(110+j*80);for(i=0;i<8;i++)d+="l15 "+(i%2?-8:8);o+='<path d="'+d+'" fill="none" stroke="'+G+'" stroke-width="1.8"/>'}return o}
+return ""}
+function top(k){var o="",i,s,a;
+if(k==="honey")return hf(11,-60,60,-60,60,W,G,2);
+if(k==="lobster"){o='<circle r="50" fill="'+W+'"/>';[46,36,26,16].forEach(function(r){o+='<circle r="'+r+'" fill="none" stroke="'+G+'" stroke-width="2.5"/>'});for(i=0;i<16;i++){a=i*Math.PI/8;o+='<line x1="'+(16*Math.cos(a)).toFixed(1)+'" y1="'+(16*Math.sin(a)).toFixed(1)+'" x2="'+(46*Math.cos(a)).toFixed(1)+'" y2="'+(46*Math.sin(a)).toFixed(1)+'" stroke="'+G+'" stroke-width="1.5"/>'}return o}
+if(k==="urchin"){o='<circle r="50" fill="'+W+'"/>';for(s=0;s<5;s++){a=(-90+72*s)*Math.PI/180;o+='<line x2="'+(50*Math.cos(a)).toFixed(1)+'" y2="'+(50*Math.sin(a)).toFixed(1)+'" stroke="'+G+'" stroke-width="3"/>';[16,28,40].forEach(function(rr){[20,52].forEach(function(off){var b=(-90+72*s+off)*Math.PI/180;o+='<circle cx="'+(rr*Math.cos(b)).toFixed(1)+'" cy="'+(rr*Math.sin(b)).toFixed(1)+'" r="'+(3+rr/20).toFixed(1)+'" fill="'+G+'" opacity=".8"/>'})})}return o}
+return ""}
+function col(k,id){var b="M50 60V250A50 14 0 0 0 150 250V60Z";
+var o='<defs><clipPath id="b'+id+'"><path d="'+b+'"/></clipPath><clipPath id="t'+id+'"><circle r="50"/></clipPath><linearGradient id="s'+id+'"><stop offset="0" stop-color="#000" stop-opacity=".4"/><stop offset=".3" stop-color="#fff" stop-opacity=".3"/><stop offset=".65" stop-color="#000" stop-opacity=".05"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></linearGradient></defs>';
+o+='<path d="'+b+'" fill="'+B+'"/><g clip-path="url(#b'+id+')">'+side(k,id)+'</g>';
+o+='<path d="'+b+'" fill="url(#s'+id+')"/><path d="'+b+'" fill="none" stroke="'+G+'" stroke-width="1.5"/>';
+o+='<g transform="translate(100 60) scale(1 .28)"><circle r="50" fill="'+B+'"/><g clip-path="url(#t'+id+')">'+top(k)+'</g><circle r="50" fill="none" stroke="'+G+'" stroke-width="3"/></g>';return o}
+["honey","lobster","urchin","control"].forEach(function(k){var e=document.getElementById("c-"+k);if(e)e.innerHTML=col(k,k)});
+var h=document.getElementById("hg");if(h){
+h.innerHTML='<defs><pattern id="gr" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#a9b8a0" stroke-opacity=".12"/></pattern><clipPath id="dc"><circle r="80"/></clipPath></defs><rect width="520" height="440" fill="url(#gr)"/><g opacity=".28">'+hf(30,-20,540,-10,460,"none","#a9b8a0",1)+'</g><svg x="40" y="40" width="250" height="375" viewBox="0 0 200 300">'+col("honey","hero")+'</svg><path d="M200 112L322 128" stroke="#f1efe6" stroke-dasharray="4 4" fill="none"/><g transform="translate(400 130)"><circle r="82" fill="#183225" stroke="#f1efe6" stroke-width="2"/><g clip-path="url(#dc)">'+hf(16,-90,90,-90,90,"none","#a9b8a0",2.5)+'</g></g><g font-family="Arial" font-size="12" fill="#d3dccb" text-anchor="middle"><text x="400" y="240">Cross-section detail (schematic)</text><text x="165" y="420">Honeycomb-inspired column (conceptual)</text></g>'}
 })();
 </script>
 </body>
